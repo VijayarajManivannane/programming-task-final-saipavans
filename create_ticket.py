@@ -21,4 +21,10 @@ header = {"content-type": "application/json"}
 response= requests.post(url,data=json.dumps(payload), headers=header, verify=False)
 
 # print the json that is returned
-print(response.text)
+r_json=response.json()
+
+ticket = r_json["response"]["serviceTicket"]
+
+
+def get_ticket():
+    return ticket

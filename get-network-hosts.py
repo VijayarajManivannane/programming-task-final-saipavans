@@ -79,14 +79,4 @@ for host in host_details:
     print("-"*10)
 
 
-def getnetworkdevicecount():
-    api = "/api/v1/network-device/count"
-    global controller
-    url = "https://" + controller + api
-    header_content = {"content-type": "application/json", "X-Auth-Token": ticket}
-    response_val = requests.get(url, headers=header_content, verify=False)
-    response_json = response_val.json()
-    print("Number of hosts: ", response_json["response"])
-
-getnetworkdevicecount()
 
